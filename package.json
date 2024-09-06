@@ -1,0 +1,34 @@
+{
+  "name": "gymproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "test"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Starlex02/GymProject.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "sql",
+    "js",
+    "structure"
+  ],
+  "author": "Dima Chumak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Starlex02/GymProject/issues"
+  },
+  "homepage": "https://github.com/Starlex02/GymProject#readme",
+  "devDependencies": {
+    "mocha": "^10.7.3"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
