@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-export class Database {
+class Database {
     constructor() {
         this.sequelize = null;
     }
@@ -58,3 +58,5 @@ export class Database {
         }
     }
 }
+
+export default Database;
