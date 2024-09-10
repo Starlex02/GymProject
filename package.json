@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "test"
+    "test": "mocha 'tests/**/*-test.js'"
   },
   "type": "module",
   "repository": {
@@ -26,9 +26,12 @@
   },
   "homepage": "https://github.com/Starlex02/GymProject#readme",
   "devDependencies": {
+    "chai": "^5.1.1",
     "mocha": "^10.7.3"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
+    "sequelize": "^6.37.3"
   }
 }
