@@ -1,6 +1,6 @@
 import { Model } from "sequelize";
 
-class WorkoutPrograms extends Model {
+export default class WorkoutProgram extends Model {
     static init(sequelize, DataTypes) {
         return super.init({
             id: {
@@ -27,9 +27,8 @@ class WorkoutPrograms extends Model {
                 type: DataTypes.STRING
             }
         }, {
-            sequelize
+            sequelize,
+            tableName: 'workout_programs'
         })
     }
 }
-
-export default WorkoutPrograms;
