@@ -1,6 +1,6 @@
 import { Model } from "sequelize";
 
-class Measurement extends Model {
+export default class Measurement extends Model {
     static init(sequelize, DataTypes) {
         return super.init({
             id: {
@@ -57,9 +57,8 @@ class Measurement extends Model {
                 allowNull: false
             }
         }, {
-            sequelize
+            sequelize,
+            tableName: 'measurements'
         });
     }
 }
-
-export default Measurement;
