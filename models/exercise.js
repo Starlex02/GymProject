@@ -1,6 +1,6 @@
 import { Model } from "sequelize";
 
-class Exercises extends Model {
+class Exercise extends Model {
     static init(sequelize, DataTypes) {
         return super.init({
             id: {
@@ -40,4 +40,4 @@ class Exercises extends Model {
     }
 }
 
-export default Exercises;
+export default Exercise;
