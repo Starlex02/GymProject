@@ -9,13 +9,7 @@ class Database {
         try {
             this.sequelize = new Sequelize('', config.user, config.password, {
                 host: config.host,
-                dialect: 'mysql',
-                pool: {
-                    max: 10,
-                    min: 0,
-                    acquire: 30000,
-                    idle: 10000
-                },
+                dialect: 'mysql'
             });
 
             // Перевірка з'єднання
@@ -39,9 +33,20 @@ class Database {
 
     async useDB(database) {
         try {
+            this.close();
             // Оновлення конфігурації підключення для вибору бази даних
-            this.sequelize.config.database = database;
-            await this.sequelize.query(`USE \`${database}\``);
+            this.sequelize = new Sequelize(database, this.sequelize.config.username, this.sequelize.config.password, {
+                host: this.sequelize.config.host,
+                dialect: 'mysql',
+                pool: {
+                    max: 10,
+                    min: 0,
+                    acquire: 30000,
+                    idle: 10000
+                },
+            });
+
+            await this.sequelize.authenticate();
             console.log(`Using database ${database}.`);
         } catch (error) {
             console.error('Error selecting database:', error.message);
