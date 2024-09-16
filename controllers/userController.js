@@ -1,4 +1,5 @@
 import {User} from "../models/index.js"
+import bcrypt from "bcrypt";
 
 class UserController {
     async signup(req, res) {
@@ -8,13 +9,11 @@ class UserController {
             return res.status(400).json({message: "User already exist"});            
         }
 
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
         User.create({
             email: req.body.email,
-            password: req.body.password,
-            goal: 'test',
-            age: 22,
-            height: 180,
-            weight: 80
+            password: hashedPassword
         });
 
         req.session.user = {email: req.body.email};
@@ -22,9 +21,9 @@ class UserController {
     }
 
     async signin(req, res) {
-        const userExist = await User.findOne({where: {email: req.body.email, password: req.body.password}});
+        const userExist = await User.findOne({where: {email: req.body.email}});
 
-        if(userExist) {
+        if(userExist && await bcrypt.compare(req.body.password, userExist.password)) {
             req.session.user = {email: req.body.email};
             res.redirect("home");   
             return;
