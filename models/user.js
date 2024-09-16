@@ -21,20 +21,16 @@ export default class User extends Model {
                 allowNull: false
             },
             goal: {
-                type: DataTypes.STRING,
-                allowNull: false
+                type: DataTypes.STRING
             },
             age: {
-                type: DataTypes.STRING,
-                allowNull: false
+                type: DataTypes.STRING
             },
             height: {
-                type: DataTypes.STRING,
-                allowNull: false
+                type: DataTypes.STRING
             },
             weight: {
-                type: DataTypes.STRING,
-                allowNull: false
+                type: DataTypes.STRING
             }
         }, {
             sequelize,
