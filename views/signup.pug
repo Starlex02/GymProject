@@ -4,8 +4,9 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title GymProject
+        script(src="/js/signup.js" type="module" defer) 
     body 
-        form(action="signup", method="post")
-            input(type="email", name="email" placeholder="E-mail")
-            input(type="password", name="password" placeholder="Пароль")
+        form(action="signup" method="post" name="signup")
+            input(type="email" name="email" placeholder="E-mail" required)
+            input(type="password" name="password" placeholder="Пароль" required)
             button(type="submit") Зареєструватися
