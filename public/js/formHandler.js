@@ -28,6 +28,6 @@ async function submitForm (form) {
 
 function handleResponse(response) {
     if (response.ok) {
-        window.location.href = "/home";
+        window.location.href = "/today";
     }
 }
