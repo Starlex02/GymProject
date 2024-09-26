@@ -1,9 +1,8 @@
 import express from "express";
-import authentication from "../middleware/authentication.js";
 
 const router = express.Router();
 
-router.get("/", authentication, (req, res) => {
+router.get("/", (req, res) => {
     res.render("home");
 });
 
