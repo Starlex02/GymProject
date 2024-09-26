@@ -51,7 +51,7 @@ class UserController {
 
     logout(req, res) {
         req.session.destroy();
-        res.redirect("signin");
+        res.redirect("/");
     }
 }
 
