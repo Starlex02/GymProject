@@ -3,6 +3,19 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content="GymProject - почніть свою подорож до здорового тіла з нами. Реєстрація та вхід для нових користувачів.")
         title GymProject
+        link(rel="stylesheet", href="css/home.css")
     body 
-        p Вуху, ти зробив це
+        header 
+            nav 
+                a.logo(href="#") 
+                    img(src="assets/logo.svg", alt="GymProject Logo")
+                div.nav-buttons
+                    a.button.signup(href="signup") Реєстрація
+                    a.button.signin(href="signin") Вхід
+        main
+            section.intro 
+                div.content
+                    h1.slogan Почни будувати тіло з нами
+                    a.button.signin(href="signin") Почати
