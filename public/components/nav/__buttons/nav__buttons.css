@@ -1,0 +1,10 @@
+.nav__buttons {
+    list-style-type: none;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    gap: 1em;
+    justify-content: space-evenly;
+}

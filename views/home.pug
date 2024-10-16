@@ -7,15 +7,9 @@ html(lang="en")
         title GymProject
         link(rel="stylesheet", href="css/home.css")
     body 
-        header 
-            nav 
-                a.logo(href="#") 
-                    img(src="assets/logo.svg", alt="GymProject Logo")
-                div.nav-buttons
-                    a.button.signup(href="signup") Реєстрація
-                    a.button.signin(href="signin") Вхід
-        main
-            section.intro 
-                div.content
+        include ../public/components/nav/nav.pug
+        main.main
+            section.section-intro 
+                div.section-intro__content
                     h1.slogan Почни будувати тіло з нами
-                    a.button.signin(href="signin") Почати
+                    a.button.button_highlight.section-intro__button(href="signin") Почати
